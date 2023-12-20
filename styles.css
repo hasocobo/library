@@ -1,0 +1,80 @@
+:root {
+    --text-color: rgb(226, 226, 226);
+}
+body {
+    font-family: sans-serif;
+}
+* {
+    box-sizing: border-box;
+}
+
+.flex {
+    display: flex;
+}
+
+.center {
+    justify-content: center;
+    align-items: center;
+}
+
+
+dialog {
+    width: 220px;
+    height: 270px;
+    border-radius: 0.5rem;
+    border: 1px solid grey;
+
+}
+
+ #book-dialog {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+ }
+
+form {
+    padding: 20px;
+    height: inherit;
+    width: inherit;
+
+    display: grid;
+    grid-template-rows: 3fr 1fr;
+    align-items: center;
+}
+
+.form-body {
+    grid-row: 1/2;
+    display: grid;
+    justify-items: center;
+    gap: 8px;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    grid-row: 2/3;
+}
+
+input {
+    text-align: center;
+    border-radius: 0.5rem;
+    border: 1px solid rgb(226, 226, 226);
+    appearance: none;
+}
+
+button {
+    background-color: aliceblue;
+    width: 80px;
+    height: 24px;
+    border-radius: 8px;
+    border: 1px solid grey;
+}
+
+button:hover {
+    background-color: rgb(208, 225, 239);
+}
+
+h4 {
+
+}
