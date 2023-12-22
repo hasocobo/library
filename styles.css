@@ -19,24 +19,27 @@ body {
 
 
 dialog {
-    width: 220px;
-    height: 270px;
+    width: 310px;
+    height: 370px;
     border-radius: 0.5rem;
     border: 1px solid grey;
+    overflow: hidden;
 
 }
 
- #book-dialog {
+dialog[open] {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+ #book-dialog {
+
  }
 
 form {
     padding: 20px;
     height: inherit;
-    width: inherit;
-
     display: grid;
     grid-template-rows: 3fr 1fr;
     align-items: center;
@@ -65,8 +68,8 @@ input {
 
 button {
     background-color: aliceblue;
-    width: 80px;
-    height: 24px;
+    width: 120px;
+    height: 30px;
     border-radius: 8px;
     border: 1px solid grey;
 }

@@ -1,10 +1,14 @@
 const newBookButton = document.querySelector('#new-book');
 const closeButton = document.querySelector('#close');
-const bookDialog = document.querySelector('#book-dialog');
+const bookDialog = document.querySelector('dialog');
+
+newBookButton.addEventListener('click', (event)=> {
+    event.preventDefault();
+    bookDialog.showModal();
+})
 
 closeButton.addEventListener('click', (event) => {
     event.preventDefault();
-    bookDialog.close();
 })
 
 class Book {
