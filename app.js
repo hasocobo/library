@@ -3,6 +3,7 @@ const closeButton = document.querySelector('#close');
 const confirmButton = document.querySelector('#confirm');
 const bookDialog = document.querySelector('dialog');
 const inputs = document.querySelectorAll('.form-body input');
+const form = document.querySelector('form');
 
 let library = [];
 
@@ -27,9 +28,14 @@ closeButton.addEventListener('click', (event) => {
 
 confirmButton.addEventListener('click', (event) => {
     event.preventDefault();
-    addToLibrary(new Book(inputs[0].value, inputs[1].value, inputs[2].value));
-    bookDialog.children[0].reset();
-    bookDialog.close();
+    if(form.checkValidity()){
+        addToLibrary(new Book(inputs[0].value, inputs[1].value, inputs[2].value));
+        bookDialog.children[0].reset();
+        bookDialog.close();
+    }
+    else{
+        form.reportValidity();
+    }
 })
 
 
