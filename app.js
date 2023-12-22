@@ -4,7 +4,7 @@ const confirmButton = document.querySelector('#confirm');
 const bookDialog = document.querySelector('dialog');
 const inputs = document.querySelectorAll('.form-body input');
 
-let books = [];
+let library = [];
 
 class Book {
     constructor(title, author, page, isRead){
@@ -34,7 +34,7 @@ confirmButton.addEventListener('click', (event) => {
 
 
 function addToLibrary(book){
-    books.push(book);
+    library.push(book);
 }
 
 function addNewBook(title, author, page, isRead){
