@@ -81,3 +81,22 @@ button:hover {
 h4 {
     font-size: 1.5rem;
 }
+
+
+.books {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.book {
+    border-radius: 0.5rem;
+    background-color: beige;
+    text-align: center;
+    height: 350px;
+}
+
+.books-container {
+    padding: 4rem;
+    margin-inline: auto;
+}
