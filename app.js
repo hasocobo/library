@@ -31,10 +31,9 @@ closeButton.addEventListener('click', (event) => {
 confirmButton.addEventListener('click', (event) => {
     event.preventDefault();
     if(form.checkValidity()){
-        addToLibrary(new Book(inputs[0].value, inputs[1].value, inputs[2].value));
+        addToLibrary(addNewBook(inputs[0].value, inputs[1].value, inputs[2].value));
         bookDialog.children[0].reset();
         bookDialog.close();
-        showBooks();
     }
     else{
         form.reportValidity();
@@ -44,6 +43,7 @@ confirmButton.addEventListener('click', (event) => {
 
 function addToLibrary(book){
     library.push(book);
+    showBooks();
 }
 
 function addNewBook(title, author, page, isRead){
@@ -61,7 +61,9 @@ function showBooks(){
         author.textContent = element.author;
         const page = document.createElement('p');
         page.textContent = `${element.page} pages`;
-
+        const remove = document.createElement('button');
+        remove.textContent = 'X';
+        remove.classList.add('remove-book');
 
         const book = document.createElement('div');
         book.classList.add('book');
@@ -69,7 +71,21 @@ function showBooks(){
         book.appendChild(title);
         book.appendChild(author);
         book.appendChild(page);
+        book.appendChild(remove);
 
         books.appendChild(book);
+
+        remove.addEventListener('click', e => {
+            removeBook(element);
+            showBooks();
+        })
     });
 }
+
+function removeBook(book) {
+    library = library.filter(item => item !== book);
+
+}
+
+addToLibrary(addNewBook('A Tale of Two Cities', 'Charles Dickens', 334));
+
